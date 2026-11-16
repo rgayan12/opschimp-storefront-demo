@@ -74,7 +74,7 @@ export const api = {
   },
 
   async acceptTerms(leadId: number, payload: TermsPayload): Promise<TermsResponse> {
-    const res = await fetch(`/api/leads/${leadId}/terms`, {
+    const res = await fetch(`/api/leads/${leadId}/subscribe`, {
       method: 'POST',
       headers: getHeaders(),
       body: JSON.stringify(payload),
