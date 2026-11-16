@@ -31,15 +31,9 @@ npm install
 ```
 
 ### 2. Configure Environment Variables
-Copy `.env.example` to `.env`:
-```bash
-cp .env.example .env
-```
-Fill in your local or staging values:
-```env
-OPSCHIMP_BASE_URL=http://localhost:8080/api/v1/client
-OPSCHIMP_API_KEY=your_tenant_bearer_token_here
-```
+Create a `.env` file with your configuration:
+- `OPSCHIMP_BASE_URL`: The URL to your client API endpoint
+- `OPSCHIMP_API_KEY`: Your tenant Bearer token
 
 ### 3. Run Dev Server
 ```bash

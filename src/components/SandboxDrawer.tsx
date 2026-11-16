@@ -81,12 +81,12 @@ export const SandboxDrawer: React.FC<SandboxDrawerProps> = ({ isOpen, onClose, o
               </label>
               <input
                 type="text"
-                placeholder="http://localhost:8080/api/v1/client"
+                placeholder="https://your-domain.com/api/v1/client"
                 value={baseUrl}
                 onChange={(e) => setBaseUrl(e.target.value)}
                 className="w-full text-xs font-mono px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500"
               />
-              <span className="text-[11px] text-slate-400 mt-1 block">Default: /api/v1/client on localhost:8080 or Netlify ENV</span>
+              <span className="text-[11px] text-slate-400 mt-1 block">Default: Configured via Netlify Environment Variables</span>
             </div>
 
             <div>
