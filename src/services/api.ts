@@ -21,15 +21,33 @@ const getHeaders = () => {
 
 export const api = {
   async createLead(payload: LeadPayload): Promise<{ status: string; lead_id: number; correlation_id?: string }> {
+    const formattedPayload = {
+      first_name: payload.first_name,
+      last_name: payload.last_name,
+      email: payload.email,
+      phone: payload.phone,
+      service_type: 'lawn_care',
+      address: {
+        line1: payload.address_line_1,
+        town: payload.city || '',
+        postcode: payload.postcode,
+        country: 'GB',
+      },
+      source: {
+        utm_source: payload.source || 'website_calculator',
+      },
+    };
+
     const res = await fetch('/api/leads', {
       method: 'POST',
       headers: getHeaders(),
-      body: JSON.stringify(payload),
+      body: JSON.stringify(formattedPayload),
     });
 
     const data = await res.json();
     if (!res.ok) {
-      throw new Error(data.message || 'Failed to submit contact details.');
+      const errDetail = data.errors ? Object.values(data.errors).flat().join(', ') : (data.message || 'Failed to submit contact details.');
+      throw new Error(errDetail);
     }
     return data;
   },
