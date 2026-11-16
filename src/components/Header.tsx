@@ -15,7 +15,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSandbox, hasCustomKey }) =
             <Sprout className="w-6 h-6" />
           </div>
           <div>
-            <span className="font-bold text-lg text-slate-900 leading-tight block">GreenThumb Lawn Care</span>
+            <span className="font-bold text-lg text-slate-900 leading-tight block">LawnsVille Lawn Care</span>
             <span className="text-xs text-slate-500 block">Powered by OpsChimp Storefront API</span>
           </div>
         </div>

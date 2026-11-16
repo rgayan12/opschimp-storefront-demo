@@ -178,7 +178,7 @@ export const StepCheckout: React.FC<StepCheckoutProps> = ({
             className="mt-1 w-4 h-4 rounded text-brand-600 focus:ring-brand-500 border-slate-300"
           />
           <div className="text-xs text-slate-600 leading-relaxed">
-            I agree to the <strong>Terms of Service</strong> and authorize GreenThumb Lawn Care to initiate recurring subscription payments for this service plan. Card details are tokenized securely with 256-bit encryption via Chimp Pay.
+            I agree to the <strong>Terms of Service</strong> and authorize LawnsVille Lawn Care to initiate recurring subscription payments for this service plan. Card details are tokenized securely with 256-bit encryption via Chimp Pay.
           </div>
         </label>
 
