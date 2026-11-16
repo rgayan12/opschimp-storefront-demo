@@ -52,20 +52,37 @@ export const SandboxDrawer: React.FC<SandboxDrawerProps> = ({ isOpen, onClose, o
   return (
     <div className="fixed inset-0 z-50 overflow-hidden bg-slate-900/40 backdrop-blur-sm flex justify-end">
       <div className="w-full max-w-md bg-white h-full shadow-2xl flex flex-col animate-in slide-in-from-right duration-200">
-        <div className="p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+        <div className="p-4 sm:p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50 gap-3">
           <div>
-            <h3 className="font-bold text-slate-900">Developer Sandbox Settings</h3>
-            <p className="text-xs text-slate-500">Override edge function target for live testing</p>
+            <h3 className="font-bold text-slate-900 text-sm sm:text-base">API Settings</h3>
+            <p className="text-xs text-slate-500">Configure connection & token</p>
           </div>
-          <button
-            onClick={onClose}
-            className="p-1 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-200"
-          >
-            <X className="w-5 h-5" />
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              type="submit"
+              form="sandbox-form"
+              className="flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-white bg-brand-600 hover:bg-brand-700 rounded-lg transition-colors shadow-sm"
+            >
+              {savedSuccess ? (
+                <>
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  <span>Saved!</span>
+                </>
+              ) : (
+                <span>Save Settings</span>
+              )}
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-200"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
-        <form onSubmit={handleSave} className="p-6 flex-1 flex flex-col justify-between overflow-y-auto">
+        <form id="sandbox-form" onSubmit={handleSave} className="p-6 flex-1 flex flex-col justify-between overflow-y-auto pb-28">
           <div className="space-y-5">
             <div className="p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-800 flex items-start gap-2.5">
               <ShieldAlert className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
